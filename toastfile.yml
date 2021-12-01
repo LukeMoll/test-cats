@@ -1,10 +1,12 @@
-- tasks:
+---
+- hosts: locahost
+  tasks:
     - name: Assertions
       assert:
         that:
           - toast.slice.vars.port is defined
-        fail_msg: Must define `port` var in slice
-    - name: create venv
+        fail_msg: "Must define 'port' var in slice"
+    - name: Create venv
       pip:
         - virtualenv: '{{ (toast.slice.path, ''venv'') | path_join }}'
           requirements: '{{ (toast.slice.path, ''pip-requirements.txt) | path_join }}'
