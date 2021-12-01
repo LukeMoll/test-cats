@@ -6,6 +6,9 @@
         that:
           - toast.slice.vars.port is defined
         fail_msg: "Must define 'port' var in slice"
+    - name: Print hello
+      debug:
+        msg: "Hello!"
     - name: Create venv
       pip:
         - virtualenv: '{{ (toast.slice.path, ''venv'') | path_join }}'
