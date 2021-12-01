@@ -11,7 +11,7 @@
         msg: Hello!
     - name: "Create venv"
       pip:
-        - virtualenv: '{{ (toast.slice.path, ''venv'') | path_join }}'
+          virtualenv: '{{ (toast.slice.path, ''venv'') | path_join }}'
           requirements: '{{ (toast.slice.path, ''pip-requirements.txt) | path_join }}'
     - name: systemd unit
       include_role:
