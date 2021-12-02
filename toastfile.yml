@@ -19,7 +19,7 @@
       vars:
         service_name: test-cats
         service_description: Cats - test for Flask apps using gunicorn
-        exec_start: "{{ (toast.slice.path, 'venv', 'bin', 'gunicorn') | path_join }} --chdir {{(toast.slice.path}} app:app -b 127.0.0.1:{{ toast.slice.vars.port }}"
+        exec_start: "{{ (toast.slice.path, 'venv', 'bin', 'gunicorn') | path_join }} --chdir {{toast.slice.path}} app:app -b 127.0.0.1:{{ toast.slice.vars.port }}"
     - name: Nginx config
       include_role:
         name: nginx
